@@ -1,0 +1,245 @@
+from main import *
+from ctypes import *
+
+GLOBAL_STATE = 0
+GLOBAL_STATE_BTN1 = 0
+GLOBAL_STATE_BTN2 = 0
+GLOBAL_STATE_BTN3 = 0
+
+class UIFunctions(MainWindow):
+
+    ## ==> MAXIMIZE RESTORE FUNCTION
+    def maximize_restore(self):
+        global GLOBAL_STATE
+        status = GLOBAL_STATE
+
+        # IF NOT MAXIMIZED
+        if status == 0:
+            self.showMaximized()
+
+            # SET GLOBAL TO 1
+            GLOBAL_STATE = 1
+            
+            # IF MAXIMIZED REMOVE MARGINS AND BORDER RADIUS
+            #self.ui.frame_general.setContentsMargins(0, 0, 0, 0)
+            self.resize(self.width()+1000, self.height()+1000)
+            self.ui.frame_general.setStyleSheet(u"background-color: rgb(0, 85, 127);\n"
+"border-color: none;\n"
+"border-radius: 10px;")
+            #self.ui.frame_general.setStyleSheet("background-color: rgb(0, 85, 127); border-radius: 0px;")
+            self.ui.max_btn.setToolTip("Restaurar")
+        else:
+            GLOBAL_STATE = 0
+            self.showNormal()
+            self.resize(self.width(), self.height())
+            self.ui.frame_general.setContentsMargins(10, 10, 10, 10)
+            #self.ui.frame_general.setStyleSheet("background-color: rgb(0, 85, 127); border-radius: 10px;")
+            self.ui.max_btn.setToolTip("Maximizar")
+
+    ##ACTIVA EL BOTON DEL PRIMER PASO(ARR_BTN)                
+    def active_ARR_btn(self):
+        global GLOBAL_STATE_BTN1
+        statusButton_arr = GLOBAL_STATE_BTN1
+
+        # IF NOT MAXIMIZED
+        if statusButton_arr == 0:
+            #self.showActived()
+
+            # SET GLOBAL TO 1
+            GLOBAL_STATE_BTN1 = 1
+
+            # IF MAXIMIZED REMOVE MARGINS AND BORDER RADIUS
+            self.ui.arr_btn.setGeometry(QRect(100, 100, 81, 81))
+            self.ui.arr_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 255, 127, 255), stop:0.995192 rgba(212, 212, 106, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.495192 rgba(255, 255, 127, 255), stop:1 rgba(219, 219, 0, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.arr_btn.setToolTip("activado")
+        else:
+            GLOBAL_STATE_BTN1 = 0
+            self.ui.arr_btn.setGeometry(QRect(100, 100, 81, 81))
+            self.ui.arr_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.arr_btn.setToolTip("desactivado")
+
+    ##ACTIVA EL BOTON DEL SEGUNDO PASO(CC_BTN)                
+    def active_CC_btn(self):
+        global GLOBAL_STATE_BTN2
+        statusButton_cc = GLOBAL_STATE_BTN2
+
+        # IF NOT MAXIMIZED
+        if statusButton_cc == 0:
+            #self.showActived()
+
+            # SET GLOBAL TO 1
+            GLOBAL_STATE_BTN2 = 1
+            GLOBAL_STATE_BTN1 = 0
+            self.ui.arr_btn.setGeometry(QRect(100, 100, 81, 81))
+            self.ui.arr_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.arr_btn.setToolTip("desactivado")
+            # IF MAXIMIZED REMOVE MARGINS AND BORDER RADIUS
+            self.ui.cc_btn.setGeometry(QRect(230, 100, 81, 81))
+            self.ui.cc_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 255, 127, 255), stop:0.995192 rgba(212, 212, 106, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.495192 rgba(255, 255, 127, 255), stop:1 rgba(219, 219, 0, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.cc_btn.setToolTip("activado")
+        else:
+            GLOBAL_STATE_BTN2 = 0
+            self.ui.cc_btn.setGeometry(QRect(230, 100, 81, 81))
+            self.ui.cc_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.cc_btn.setToolTip("desactivado")
+
+    ##ACTIVA EL BOTON DE PARO GENERAL              
+    def active_PARO_btn(self):
+        global GLOBAL_STATE_BTN3
+        statusButton_paro = GLOBAL_STATE_BTN3
+
+        # IF NOT MAXIMIZED
+        if statusButton_paro== 0:
+            #self.showActived()
+
+            # SET GLOBAL TO 1
+            GLOBAL_STATE_BTN3 = 1
+
+            GLOBAL_STATE_BTN1 = 0
+            self.ui.arr_btn.setGeometry(QRect(100, 100, 81, 81))
+            self.ui.arr_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.arr_btn.setToolTip("desactivado")
+            
+            GLOBAL_STATE_BTN2 = 0
+            self.ui.cc_btn.setGeometry(QRect(230, 100, 81, 81))
+            self.ui.cc_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+            self.ui.cc_btn.setToolTip("desactivado")
+        else:
+            GLOBAL_STATE_BTN3 = 0
+   
+   
+    ## ==> UI DEFINITIONS
+    def uiDefinitions(self):
+
+        # REMOVE TITLE BAR
+        self.setWindowFlag(QtCore.Qt.FramelessWindowHint)
+        self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        
+        self.shadow = QGraphicsDropShadowEffect(self)
+        self.shadow.setBlurRadius(20)
+        self.shadow.setXOffset(0)
+        self.shadow.setYOffset(0)
+        self.shadow.setColor(QColor(0,0,0, 100))
+        
+        self.ui.frame_general.setGraphicsEffect(self.shadow)
+        
+        self.ui.max_btn.clicked.connect(lambda: UIFunctions.maximize_restore(self))
+        self.ui.minim_btn.clicked.connect(lambda: self.showMinimized())
+        self.ui.close_btn.clicked.connect(lambda: self.close())
+        self.ui.arr_btn.clicked.connect(lambda: UIFunctions.active_ARR_btn(self))
+        self.ui.cc_btn.clicked.connect(lambda: UIFunctions.active_CC_btn(self))
+        self.ui.paro_btn.clicked.connect(lambda: UIFunctions.active_PARO_btn(self))
+
+        ## ==> CREATE SIZE GRIP TO RESIZE WINDOW
+        self.sizegrip = QSizeGrip(self.ui.title_bar)
+        self.sizegrip.setStyleSheet("QSizeGrip { width: 10px; height: 10px; margin:5px } QSizeGrip: hover {background-color: rgb(0, 85, 127)}")
+        self.sizegrip.setToolTip("Resize Window")
+
+
+    ## RETURN STATUS()
+    def returnStatus():
+        return GLOBAL_STATE
+    
+    def returnStatus_ARR_btn():
+        return GLOBAL_STATE_BTN1
+    
+    def returnStatus_CC_btn():
+        return GLOBAL_STATE_BTN2
