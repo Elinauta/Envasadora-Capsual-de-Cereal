@@ -1,0 +1,331 @@
+# -*- coding: utf-8 -*-
+################################################
+## Form generated from reading UI file 'GUI-Envasadora-Version.ui' ##
+## Created by: Qt User Interface Compiler version 5.15.2##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################
+
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+
+import resources_rc
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        if not MainWindow.objectName():
+            MainWindow.setObjectName(u"MainWindow")
+        MainWindow.resize(674, 493)
+        MainWindow.setWindowOpacity(0.000000000000000)
+        MainWindow.setAutoFillBackground(True)
+        MainWindow.setStyleSheet(u"background-color: none;")
+        self.centralwidget = QWidget(MainWindow)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.verticalLayout = QVBoxLayout(self.centralwidget)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.frame_general = QFrame(self.centralwidget)
+        self.frame_general.setObjectName(u"frame_genral")
+        self.frame_general.setMaximumSize(QSize(1080, 720))
+        self.frame_general.setStyleSheet(u"background-color: rgb(0, 85, 127);\n"
+"border-color: none;\n"
+"border-radius: 10px;")
+        self.frame_general.setFrameShape(QFrame.StyledPanel)
+        self.frame_general.setFrameShadow(QFrame.Raised)
+        self.sensores = QFrame(self.frame_general)
+        self.sensores.setObjectName(u"sensores")
+        self.sensores.setGeometry(QRect(10, 40, 621, 91))
+        sizePolicy = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(3)
+        sizePolicy.setVerticalStretch(3)
+        sizePolicy.setHeightForWidth(self.sensores.sizePolicy().hasHeightForWidth())
+        self.sensores.setSizePolicy(sizePolicy)
+        self.sensores.setStyleSheet(u"background-color: rgb(63,95,107);\n"
+"border-radius: 20px;")
+        self.sensores.setFrameShape(QFrame.NoFrame)
+        self.sensores.setFrameShadow(QFrame.Raised)
+        self.sensores.setLineWidth(6)
+        self.sensores.setMidLineWidth(0)
+        self.horizontalLayout = QHBoxLayout(self.sensores)
+        self.horizontalLayout.setSpacing(30)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(10, 12, 10, 12)
+        self.horizontalSpacer_5 = QSpacerItem(35, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_5)
+
+        self.sensor_vasos = QFrame(self.sensores)
+        self.sensor_vasos.setObjectName(u"sensor_vasos")
+        self.sensor_vasos.setMinimumSize(QSize(0, 0))
+        self.sensor_vasos.setMaximumSize(QSize(70, 67))
+        self.sensor_vasos.setLayoutDirection(Qt.LeftToRight)
+        self.sensor_vasos.setStyleSheet(u"image: url(:/icnonos/Images/vaso-gris.png);\n"
+"border-radius: 32px;\n"
+"background-color: rgb(95,104,107);")
+        self.sensor_vasos.setFrameShape(QFrame.NoFrame)
+        self.sensor_vasos.setFrameShadow(QFrame.Plain)
+
+        self.horizontalLayout.addWidget(self.sensor_vasos)
+
+        self.sensor_cuchara = QFrame(self.sensores)
+        self.sensor_cuchara.setObjectName(u"sensor_cuchara")
+        self.sensor_cuchara.setMaximumSize(QSize(70, 67))
+        self.sensor_cuchara.setStyleSheet(u"image: url(:/icnonos/Images/cuchara-gris.png);\n"
+"border-radius: 32px;\n"
+"background-color: rgb(95,104,107);")
+        self.sensor_cuchara.setFrameShape(QFrame.NoFrame)
+        self.sensor_cuchara.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout.addWidget(self.sensor_cuchara)
+
+        self.sensor_tolva = QFrame(self.sensores)
+        self.sensor_tolva.setObjectName(u"sensor_tolva")
+        self.sensor_tolva.setMaximumSize(QSize(70, 67))
+        self.sensor_tolva.setStyleSheet(u"border-radius: 32px;\n"
+"image: url(:/icnonos/Images/cereal-gris.png);\n"
+"background-color: rgb(95,104,107);")
+        self.sensor_tolva.setFrameShape(QFrame.NoFrame)
+        self.sensor_tolva.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout.addWidget(self.sensor_tolva)
+
+        self.sensor_tapa = QFrame(self.sensores)
+        self.sensor_tapa.setObjectName(u"sensor_tapa")
+        self.sensor_tapa.setMaximumSize(QSize(70, 67))
+        self.sensor_tapa.setStyleSheet(u"image: url(:/icnonos/Images/tapa-gris.png);\n"
+"border-radius:32px;\n"
+"background-color: rgb(95,104,107);")
+        self.sensor_tapa.setFrameShape(QFrame.NoFrame)
+        self.sensor_tapa.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout.addWidget(self.sensor_tapa)
+
+        self.sensor_temp = QFrame(self.sensores)
+        self.sensor_temp.setObjectName(u"sensor_temp")
+        self.sensor_temp.setMaximumSize(QSize(70, 67))
+#if QT_CONFIG(tooltip)
+        self.sensor_temp.setToolTip(u"<html><head/><body><p>Temperatura del sellador</p></body></html>")
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        self.sensor_temp.setStatusTip(u"")
+#endif // QT_CONFIG(statustip)
+        self.sensor_temp.setStyleSheet(u"image: url(:/icnonos/Images/termo-gris.png);\n"
+"border-radius:32px;\n"
+"background-color: rgb(95,104,107);")
+        self.sensor_temp.setFrameShape(QFrame.NoFrame)
+        self.sensor_temp.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout.addWidget(self.sensor_temp)
+
+        self.horizontalSpacer_6 = QSpacerItem(35, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_6)
+
+        self.control = QFrame(self.frame_general)
+        self.control.setObjectName(u"control")
+        self.control.setGeometry(QRect(10, 140, 621, 281))
+        self.control.setStyleSheet(u"background-color: rgb(108,162,184);\n"
+"border-radius: 20px;")
+        self.control.setFrameShape(QFrame.NoFrame)
+        self.control.setFrameShadow(QFrame.Raised)
+        self.label1 = QLabel(self.control)
+        self.label1.setObjectName(u"label1")
+        self.label1.setGeometry(QRect(150, 50, 141, 31))
+        self.label1.setStyleSheet(u"font: 16pt \"Droid Sans Fallback\" ;\n"
+"color: rgb(255, 255, 255);")
+        self.label2 = QLabel(self.control)
+        self.label2.setObjectName(u"label2")
+        self.label2.setGeometry(QRect(100, 190, 68, 22))
+        self.label2.setStyleSheet(u"font: 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color:none;")
+        self.label3 = QLabel(self.control)
+        self.label3.setObjectName(u"label3")
+        self.label3.setGeometry(QRect(240, 190, 68, 22))
+        self.label3.setStyleSheet(u"font: 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"background-color:none;")
+        self.arr_btn = QPushButton(self.control)
+        self.arr_btn.setObjectName(u"arr_btn")
+        self.arr_btn.setGeometry(QRect(100, 100, 81, 81))
+        self.arr_btn.setTabletTracking(False)
+        self.arr_btn.setFocusPolicy(Qt.TabFocus)
+        self.arr_btn.setContextMenuPolicy(Qt.NoContextMenu)
+        self.arr_btn.setAcceptDrops(False)
+        self.arr_btn.setLayoutDirection(Qt.LeftToRight)
+        self.arr_btn.setAutoFillBackground(False)
+        self.arr_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+        self.arr_btn.setCheckable(True)
+        self.arr_btn.setChecked(False)
+        self.arr_btn.setAutoDefault(False)
+        self.arr_btn.setFlat(False)
+        self.cc_btn = QPushButton(self.control)
+        self.cc_btn.setObjectName(u"cc_btn")
+        self.cc_btn.setGeometry(QRect(230, 100, 81, 81))
+        self.cc_btn.setFocusPolicy(Qt.TabFocus)
+        self.cc_btn.setContextMenuPolicy(Qt.NoContextMenu)
+        self.cc_btn.setAcceptDrops(False)
+        self.cc_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(0, 203, 149, 255), stop:0.995192 rgba(0, 149, 104, 255));\n"
+"font: 75 14pt \"DejaVu Sans\";\n"
+"color: rgb(255, 255, 255);\n"
+"border-radius:40px;\n"
+"border:2px solid white;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.206731 rgba(142, 255, 225, 255), stop:0.995192 rgba(0, 186, 127, 255));\n"
+"	font: 75 11pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"}")
+        self.paro_btn = QPushButton(self.control)
+        self.paro_btn.setObjectName(u"paro_btn")
+        self.paro_btn.setGeometry(QRect(380, 100, 151, 81))
+        self.paro_btn.setStyleSheet(u"QPushButton{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(255, 0, 0, 255), stop:1 rgba(170, 0, 0, 255));\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"	font: 75 16pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.639423 rgba(255, 0, 0, 255), stop:1 rgba(208, 0, 0, 255));\n"
+"	border-radius:40px;\n"
+"	border:2px solid white;\n"
+"	font: 75 14pt \"DejaVu Sans\";\n"
+"	color: rgb(255, 255, 255);\n"
+"}")
+        self.title_bar = QFrame(self.frame_general)
+        self.title_bar.setObjectName(u"title_bar")
+        self.title_bar.setGeometry(QRect(10, -40, 521, 80))
+        self.title_bar.setFrameShape(QFrame.StyledPanel)
+        self.title_bar.setFrameShadow(QFrame.Raised)
+        self.title = QLabel(self.title_bar)
+        self.title.setObjectName(u"title")
+        self.title.setGeometry(QRect(10, 50, 431, 22))
+        font = QFont()
+        font.setFamily(u"FreeSans")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setWeight(50)
+        self.title.setFont(font)
+        self.title.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.buttons_bar = QFrame(self.frame_general)
+        self.buttons_bar.setObjectName(u"buttons_bar")
+        self.buttons_bar.setGeometry(QRect(530, 0, 100, 41))
+        self.buttons_bar.setFrameShape(QFrame.StyledPanel)
+        self.buttons_bar.setFrameShadow(QFrame.Raised)
+        self.minim_btn = QPushButton(self.buttons_bar)
+        self.minim_btn.setObjectName(u"minim_btn")
+        self.minim_btn.setGeometry(QRect(40, 10, 16, 16))
+        self.minim_btn.setMaximumSize(QSize(16, 16))
+        self.minim_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(185, 185, 185);\n"
+"border-color: none;\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: rgb(95, 95, 95);\n"
+"}")
+        self.max_btn = QPushButton(self.buttons_bar)
+        self.max_btn.setObjectName(u"max_btn")
+        self.max_btn.setGeometry(QRect(60, 10, 16, 16))
+        self.max_btn.setMaximumSize(QSize(16, 16))
+        self.max_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(185, 185, 185);\n"
+"border-color: none;\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: rgb(95, 95, 95);\n"
+"}")
+        self.close_btn = QPushButton(self.buttons_bar)
+        self.close_btn.setObjectName(u"close_btn")
+        self.close_btn.setGeometry(QRect(80, 10, 16, 16))
+        self.close_btn.setMaximumSize(QSize(16, 16))
+        self.close_btn.setStyleSheet(u"QPushButton{\n"
+"background-color: rgb(230, 0, 0);\n"
+"border-color: none;\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton::hover{\n"
+"	background-color: rgb(170, 0, 0);\n"
+"}")
+
+        self.verticalLayout.addWidget(self.frame_general)
+
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+
+        self.arr_btn.setDefault(False)
+
+
+        QMetaObject.connectSlotsByName(MainWindow)
+    # setupUi
+
+    def retranslateUi(self, MainWindow):
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+#if QT_CONFIG(tooltip)
+        self.sensores.setToolTip(QCoreApplication.translate("MainWindow", u"Sensores de nivel", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.sensor_vasos.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#000000;\">Nivel de dispensador de vasos</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.sensor_cuchara.setToolTip(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"</style></head><body style=\" font-family:'PibotoLt'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#000000;\">Nivel de dispensador de cucharas</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.sensor_tolva.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Nivel de cereal en la tolva</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.sensor_tapa.setToolTip(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" color:#ffffff;\">Nivel de despachador de tapas</span></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+        self.label1.setText(QCoreApplication.translate("MainWindow", u"ENCENDIDO", None))
+        self.label2.setText(QCoreApplication.translate("MainWindow", u"Paso 1", None))
+        self.label3.setText(QCoreApplication.translate("MainWindow", u"Paso 2", None))
+#if QT_CONFIG(tooltip)
+        self.arr_btn.setToolTip(QCoreApplication.translate("MainWindow", u"Activa el primer ciclo", None))
+#endif // QT_CONFIG(tooltip)
+        self.arr_btn.setText(QCoreApplication.translate("MainWindow", u"1", None))
+#if QT_CONFIG(tooltip)
+        self.cc_btn.setToolTip(QCoreApplication.translate("MainWindow", u"Arranque continuo", None))
+#endif // QT_CONFIG(tooltip)
+        self.cc_btn.setText(QCoreApplication.translate("MainWindow", u"2", None))
+        self.paro_btn.setText(QCoreApplication.translate("MainWindow", u"APAGAR", None))
+        self.title.setText(QCoreApplication.translate("MainWindow", u"Control de la Envasadora de C\u00e1psulas de Cereal", None))
+#if QT_CONFIG(tooltip)
+        self.minim_btn.setToolTip(QCoreApplication.translate("MainWindow", u"Minimizar", None))
+#endif // QT_CONFIG(tooltip)
+        self.minim_btn.setText("")
+#if QT_CONFIG(tooltip)
+        self.max_btn.setToolTip(QCoreApplication.translate("MainWindow", u"Maximizar", None))
+#endif // QT_CONFIG(tooltip)
+        self.max_btn.setText("")
+#if QT_CONFIG(tooltip)
+        self.close_btn.setToolTip(QCoreApplication.translate("MainWindow", u"Cerrar", None))
+#endif // QT_CONFIG(tooltip)
+        self.close_btn.setText("")
+    # retranslateUi
